@@ -98,26 +98,26 @@ class MyBall():
         """controls the representation of the box onscreen"""
         
         if not self.option():
-            self.PutCentBack()             #####             #####             #####   #####             #####             #####             ##### this puts the center back on the screen   #####
+            self.PutCentBack()                                                          ##### this puts the center back on the screen   #####
 
-            self.wrap_xy()             #####             #####             #####       #####             #####             #####             ##### this puts x and y back around the center  #####
+            self.wrap_xy()                                                              ##### this puts x and y back around the center  #####
 
-            canvas.move(self.drawobj, self.displace[0], self.displace[1])              #####             #####             #####             #####this moves the representations back        #####
-            canvas.move(self.drawobj2, self.displace[0], self.displace[1])             #####             #####             #####             #####             #####             #####       #####
+            canvas.move(self.drawobj, self.displace[0], self.displace[1])              ##### this moves the representations back        #####
+            canvas.move(self.drawobj2, self.displace[0], self.displace[1])             
 
         if randint(0,85) == 0:
             self.velocity = [0,0]
 
-        self.center[0] += self.velocity[0]     #####             #####             #####    #####           #####             #####              ##### this updates the center now on the screen    #####
+        self.center[0] += self.velocity[0]                                          #####  this updates the center now on the screen    #####
         self.center[1] += self.velocity[1]
 
         self.x[0] += self.velocity[0]
         self.x[1] += self.velocity[0]
         self.y[0] += self.velocity[1]
-        self.y[1] += self.velocity[1]          #####             #####             #####    ####             #####             #####             ##### this updates x and y around the center       #####
+        self.y[1] += self.velocity[1]                                               #####  this updates x and y around the center       #####
 
         canvas.move(self.drawobj, self.velocity[0], self.velocity[1])
-        canvas.move(self.drawobj2, self.velocity[0], self.velocity[1])             #####    #####            #####             #####             ##### this moves the representations back          #####
+        canvas.move(self.drawobj2, self.velocity[0], self.velocity[1])             #####  this moves the representations back          #####
         
         self.BrownianV()
 
@@ -130,7 +130,7 @@ class MyBall():
         if randint(1, 1* self.radius) < 2:
             self.changeColor()
                     
-        self._job = root.after(33, self.MoveIt )               # # # #                 # # # #                 # # # #                 # # # # this is the after call
+        self._job = root.after(33, self.MoveIt )                                                    
                 
     def cancel(self):
         if self._job is not None:
@@ -177,7 +177,7 @@ class MyBall():
 if __name__ == "__main__":
     root = Tk()
 
-    canvas = Canvas(root, width = screen_width, height = screen_height, bg = 'white')#"#5b3f69")
+    canvas = Canvas(root, width = screen_width, height = screen_height, bg = 'white')                               #"#5b3f69")
     canvas.pack()        
     
     for j in range(345):
